@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/update-product.css}"/>
+</head>
+<body>
+  <h1>qqq</h1>
+
+<div class="form-block">
+    <form  action="#" th:action="@{/update-product}" th:object="${product}" method="post">
+
+        <label for="name">name</label>
+        <input
+          type="text"
+          th:field="*{name}"
+          id="name"
+          placeholder="name product"
+        />
+  
+        <label for="size">size</label>
+        <input
+          type="number"
+          th:field="*{size}"
+          id="size"
+          placeholder="size product"
+        />
+  
+        <label for="brand">brand</label>
+        <input
+          type="text"
+          th:field="*{brand}"
+          id="brand"
+          placeholder="brand product"
+        />
+  
+        <label for="price">price</label>
+        <input
+          type="number"
+          th:field="*{price}"
+          id="price"
+          placeholder="price product"
+        />
+  
+        <label for="image">image</label>
+        <input
+          type="text"
+          th:field="*{image}"
+          id="image"
+          placeholder="image product"
+        />
+
+        <input class="btn btn-primary" type="submit" value="Записать изменения">
+    </form>
+</div>
+    
+</body>
+</html>

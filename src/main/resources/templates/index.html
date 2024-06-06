@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hockey-Shop</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
+  </head>
+  <body class="body">
+    <div class="header">
+      <div class="header_top">
+        <h1 class="h1_header">магазин хоккейной экипировки МЕТЕОР в России</h1>
+        <p class="h1_header text_number">+7(495) 111-55-77</p>
+      </div>
+    </div>
+
+    <!-- <h1>ХОККЕЙНЫЙ МАГАЗИН</h1> -->
+
+    <div></div>
+
+    <div>
+      <nav class="menu">
+        <ul>
+          <li class="li"><a href="/">Home</a></li>
+          <li class="li"><a href="catalog">Catalog</a></li>
+          <li class="li"><a href="#">Rapair</a></li>
+          <li class="li"><a href="about">About</a></li>
+
+          <li class="li"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- <div class="top_img">
+       
+    </div> -->
+    <img
+      class="top_img"
+      th:src="@{image/Season_Sale_2023_Desktop_comp.jpg}"
+      alt="img"
+    />
+
+    <div class="container-item">
+      <a href="catalog">
+        <div class="item">
+          <img th:src="@{image/m5-pro-skate_1.png}" alt="skate" ; />
+        </div>
+      </a>
+
+      <a href="catalog">
+        <div class="item">
+          <img th:src="@{image/1058589.png}" alt="img" ; />
+        </div>
+      </a>
+
+      <a href="catalog">
+        <div class="item">
+          <img th:src="@{image/threequarter.png}" alt="img" ; />
+        </div>
+      </a>
+
+      <a href="catalog">
+        <div class="item">
+          <img th:src="@{image/stick.png}" alt="img" ; />
+        </div>
+      </a>
+    </div>
+
+    <div class="text_item">
+      <p class="text">
+        ОФИЦИАЛЬНЫЙ МАГАЗИН "МЕТЕОР" В РОССИИ
+        <br />
+        <br />
+        Каждый любитель хоккея найдет в магазине "МЕТЕОР" то, что ищет!
+        Оригинальные клюшки, коньки, защита, хоккейное белье и аксессуары
+        представлены в широком и регулярно обновляемом ассортименте. Всегда в
+        наличии экипировка разных размеров, цветов и для всех возрастных
+        категорий.
+        <br />
+        <br />
+        Мы гарантируем оригинальное качество "МЕТЕОР". Доставка осуществляется
+        по всей России. Бесплатная доставка по Москве и Московской области при
+        заказе от 5000 рублей. Заказы можно оплатить как наличными курьеру (для
+        Москвы и Московской области) после осмотра товара, так и сделать
+        предоплату банковской картой в личном кабинете.
+        <br />
+        <br />
+        Не нашли что искали? Напишите или позвоните нам - мы проверим наличие на
+        всех актуальных складах и предложим подходящий вариант или аналог. Для
+        постоянных покупателей действует бонусная программа. Оцените
+        преимущества покупок в "МЕТЕОР" уже сейчас!
+      </p>
+    </div>
+
+    <div class="header footer">
+      <div class="header_top">
+        <h1 class="h1_header h1_footer">
+          магазин хоккейной экипировки МЕТЕОР в России
+        </h1>
+        <p class="h1_header text_number">+7(495) 111-55-77</p>
+      </div>
+    </div>
+  </body>
+</html>

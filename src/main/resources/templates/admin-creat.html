@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <h1>WWW</h1>
+    <!-- <form
+      action="#"
+      th:action="@{/admin-creat}"
+      th:object="${product}"
+      th:method="post"
+    >
+      <div class="input_div">
+        <label class="label" for="nam">
+          <input
+            class="input"
+            type="text"
+            th:field="*{name}"
+            id="nam"
+            placeholder="введите имя"
+          /><br />
+        </label>
+
+        <label class="label" for="pass">
+          <input
+            class="input"
+            type="text"
+            th:field="*{pass}"
+            id="pass"
+            placeholder=" введите пароль"
+          /><br />
+        </label>
+      </div>
+
+      <div class="div_btn">
+        <button class="button" type="submit">отправить</button>
+      </div>
+    </form> -->
+
+        <form th:action="@{/admin-creat}" th:object="${product}" method="post">
+
+            <!-- <label for="name">name</label> -->
+            <input type="text" th:field="*{name}" id="name" placeholder="name product">
+
+
+            <!-- <label for="size">size</label> -->
+            <input type="number" th:field="*{size}" id="size" placeholder="size product">
+
+
+            <!-- <label for="brand">brand</label> -->
+            <input type="text" th:field="*{brand}" id="brand" placeholder="brand product">
+
+            <!-- <label for="price">price</label> -->
+            <input type="number" th:field="*{price}" id="price" placeholder="price product">
+
+            <!-- <label for="image">price</label> -->
+            <input type="text" th:field="*{image}" id="image" placeholder="image product">
+
+
+            <input type="submit" value="Create Creat">
+          </form>
+  </body>
+</html>

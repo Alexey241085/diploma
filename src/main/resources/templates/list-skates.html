@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/list-skates.css}" />
+  </head>
+
+<h1>КОНЬКИ</h1>
+
+  <body>
+    <div th:each="product:${products}">
+      <div>
+        <img th:src="@{'/image/'+${product.image}}" alt="img" />
+      </div>
+
+      <div>
+        <p>наиминование</p>
+        <p th:text="${product.name}">Коньки</p>
+      </div>
+      <div>
+        <p>марка</p>
+        <p th:text="${product.brand}"></p>
+      </div>
+      <div>
+        <p>размер</p>
+        <p th:text="${product.size}"></p>
+      </div>
+      <div>
+        <p>цена</p>
+        <p th:text="${product.price}"></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Главная</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+  </head>
+  <body>
+
+
+    <div class="header">
+      <div class="header_top">
+        <h1 class="h1_header">магазин хоккейной экипировки МЕТЕОР в России</h1>
+        <p class="h1_header text_number">+7(495) 111-55-77</p>
+      </div>
+    </div>
+
+    <!-- <h1>ХОККЕЙНЫЙ МАГАЗИН</h1> -->
+
+    <div></div>
+
+    <div>
+      <nav class="menu">
+        <ul>
+          <li class="li"><a href="/">Home</a></li>
+          <li class="li"><a href="catalog">Catalog</a></li>
+          <li class="li"><a href="#">Rapair</a></li>
+          <li class="li"><a href="about">About</a></li>
+          <li class="li"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- <div class="heder_h2">
+      <h2 class="users">АДМИНИСТРАТОР</h2>
+    </div> -->
+
+    <div th:switch="${persons}">
+      <h2 th:case="null">No users found!</h2>
+      <div th:case="*">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="th">ID</th>
+              <th class="th">Name</th>
+              <th class="th">Mail</th>
+              <th class="th">PASS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="tr" th:each="user:${persons}">
+              <td class="td" th:text="${user.id}"></td>
+              <td class="td" th:text="${user.name}"></td>
+              <td class="td" th:text="${user.mail}"></td>
+              <td class="td" th:text="${user.pass}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="btn_div">
+        <a class="btn-primary" th:href="@{/admin}"
+          ><img class="img_link" th:src="@{image/i-4.webp}" alt=""
+        /></a>
+      </div>
+    </div>
+
+    <div class="logout">
+      <div class="div-logout">
+        <a href="#" th:href="@{/logout}">Log Out</a>
+      </div>
+    </div>
+
+    <!--    <h2>Login</h2>-->
+    <!--    <form  th:action="@{/}" method="post">-->
+    <!--      <div>-->
+    <!--        <label for="username">Username:</label>-->
+    <!--        <input type="text" id="username" name="username"/>-->
+    <!--      </div>-->
+    <!--      <div>-->
+    <!--        <label for="password">Password:</label>-->
+    <!--        <input type="password" id="password" name="password"/>-->
+    <!--      </div>-->
+
+    <!--&lt;!&ndash;      <button class="button" type="submit">отправить</button>&ndash;&gt;-->
+
+    <!--          <input type="submit" value="Login"/>-->
+    <!--      <a href="#" th:href="@{/logout}">Log Out</a>-->
+    <!--    </form>-->
+
+
+    <div class="form_creat_prroduct">
+
+      <form th:action="@{/admin}" th:object="${product}" method="post">
+        <label for="name">name</label>
+        <input
+          type="text"
+          th:field="*{name}"
+          id="name"
+          placeholder="name product"
+        />
+  
+        <label for="size">size</label>
+        <input
+          type="number"
+          th:field="*{size}"
+          id="size"
+          placeholder="size product"
+        />
+  
+        <label for="brand">brand</label>
+        <input
+          type="text"
+          th:field="*{brand}"
+          id="brand"
+          placeholder="brand product"
+        />
+  
+        <label for="price">price</label>
+        <input
+          type="number"
+          th:field="*{price}"
+          id="price"
+          placeholder="price product"
+        />
+  
+        <label for="image">price</label>
+        <input
+          type="text"
+          th:field="*{image}"
+          id="image"
+          placeholder="image product"
+        />
+  
+        <input type="submit" value="Create Creat" />
+      </form>
+    </div>
+
+    <div th:switch="${all_products}">
+      <h2 th:case="null">No users found!</h2>
+      <div th:case="*">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="th">ID</th>
+              <th class="th">Name</th>
+              <th class="th">Brand</th>
+              <th class="th">Size</th>
+              <th class="th">Price</th>
+              <th class="th">Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="tr" th:each="prod:${all_products}">
+              <td class="td" th:text="${prod.id}"></td>
+              <td class="td" th:text="${prod.name}"></td>
+              <td class="td" th:text="${prod.brand}"></td>
+              <td class="td" th:text="${prod.size}"></td>
+              <td class="td" th:text="${prod.price}"></td>
+              <td class="td" th:text="${prod.image}"></td>
+              <td>
+                <a th:href="@{update-product/{id}(id=${prod.id})}"
+                title="Изменить пользователя">E</a>;
+             <a th:href="@{admin-delete/{id}(id=${prod.id})}"
+                title="Удалить пользователя">X</a></td>
+            </tr>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    
+  </body>
+</html>
+
+<!-- https://hrcode.su/javascript/kak-sozdat-dinamicheskuyu-tabliczu-v-html-s-pomoshhyu-javascript/?ysclid=lvsdmgzzk222687738 -->

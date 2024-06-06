@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/catalog.css}" />
+    <title>Сatalog</title>
+  </head>
+  <body class="body">
+    <div class="header">
+      <div class="header_top">
+        <h1 class="h1_header">магазин хоккейной экипировки МЕТЕОР в России</h1>
+        <p class="h1_header text_number">+7(495) 111-55-77</p>
+      </div>
+    </div>
+
+    <!-- 
+    <h1>КАТАЛОГ</h1> -->
+
+    <nav class="menu">
+      <ul>
+        <li class="li"><a href="/">Home</a></li>
+        <li class="li"><a href="catalog">Catalog</a></li>
+        <li class="li"><a href="#">Rapair</a></li>
+        <li class="li"><a href="about">About</a></li>
+        <li class="li"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    
+    <div class="container-item">
+      <a href="catalog/list-skates">
+        <div class="item item_hover">
+          <img th:src="@{image/m5-pro-skate_1.png}" alt="skate" ; />
+        </div>
+      </a>
+      
+
+      <div class="item item_hover">
+        <img th:src="@{image/1058589.png}" alt="img" ; />
+      </div>
+
+      <div class="item item_hover">
+        <img th:src="@{image/threequarter.png}" alt="img" ; />
+      </div>
+
+      <div class="item item_hover">
+        <img th:src="@{image/stick.png}" alt="img" ; />
+      </div>
+
+      <div class="item item_hover">
+        <img th:src="@{image/combo.png}" alt="img" ; />
+      </div>
+
+      <div class="item item_hover">
+        <img th:src="@{image/hyperlite.png}" alt="img" ; />
+      </div>
+
+      <div class="item item_hover">
+        <img th:src="@{image/supreme_mach.png}" alt="img" ; />
+      </div>
+
+      <div class="item item_hover">
+        <img th:src="@{image/sr_catalog.png}" alt="img" ; />
+      </div>
+    </div>
+
+    <!-- <div th:each="product: ${products}">
+      
+      <div>
+        <img th:src="@{'image/'+${product.image}}" alt="img" />
+      </div>
+
+      <div>
+        <p>наиминование</p>
+        <p th:text="${product.name}">Коньки</p>
+      </div>
+      <div>
+        <p>марка</p>
+        <p th:text="${product.brand}"></p>
+      </div>
+      <div>
+        <p>размер</p>
+        <p th:text="${product.size}"></p>
+      </div>
+      <div>
+        <p>цена</p>
+        <p th:text="${product.price}"></p>
+      </div>
+    </div> -->
+
+    <div class="text_item">
+      <p class="text">
+        Игровая хоккейная форма Bauer для взрослых, юниоров и детей. Самый
+        широкий выбор доступных моделей, размеров и цветов. Оригинальные клюшки,
+        коньки, защита, шлемы, сумки, роликовые коньки и аксессуары представлены
+        в широком и регулярно обновляемом ассортименте. Большой выбор моделей,
+        расцветок и размеров.
+      </p>
+    </div>
+
+    <div class="header footer">
+      <div class="header_top">
+        <h1 class="h1_header h1_footer">
+          магазин хоккейной экипировки МЕТЕОР в России
+        </h1>
+        <p class="h1_header text_number">+7(495) 111-55-77</p>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
