@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hockey-Shop</title>
+    <title>Хоккейный магазин</title>
     <link rel="stylesheet" th:href="@{/css/index.css}" />
   </head>
   <body class="body">
@@ -16,20 +16,41 @@
 
     <!-- <h1>ХОККЕЙНЫЙ МАГАЗИН</h1> -->
 
-    <div></div>
+    <div class="header_menu">
 
-    <div>
-      <nav class="menu">
-        <ul>
-          <li class="li"><a href="/">Home</a></li>
-          <li class="li"><a href="catalog">Catalog</a></li>
-          <li class="li"><a href="#">Rapair</a></li>
-          <li class="li"><a href="about">About</a></li>
+      <div>
+        <nav class="menu">
+          <ul>
+            <li class="li"><a href="/">Главная</a></li>
+            <li class="li"><a href="/catalog">Каталог</a></li>
+            <li class="li"><a href="#">Rapair</a></li>
+            <li class="li"><a href="about">About</a></li>
+            <li class="li"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+  
 
-          <li class="li"><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="img_header_menu">
+        <a href="/auth">
+          <div>
+            <img class="img_cart" th:src="@{image/7158883.png}" alt="cart">
+          </div>
+        </a>
+
+      <a href="/cart">
+        <div>
+          <img class="img_cart" th:src="@{image/5834948.png}" alt="cart">
+        </div>
+      </a>
+      </div>
+    
     </div>
+
+   
+
+
+
 
     <!-- <div class="top_img">
        

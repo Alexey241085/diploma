@@ -6,7 +6,7 @@
 >
   <head>
     <meta charset="UTF-8" />
-    <title>Главная</title>
+    <title>Админ</title>
     <link rel="stylesheet" th:href="@{/css/admin.css}" />
   </head>
   <body>
@@ -26,8 +26,8 @@
     <div>
       <nav class="menu">
         <ul>
-          <li class="li"><a href="/">Home</a></li>
-          <li class="li"><a href="catalog">Catalog</a></li>
+          <li class="li"><a href="/">Главная</a></li>
+          <li class="li"><a href="catalog">Каталог</a></li>
           <li class="li"><a href="#">Rapair</a></li>
           <li class="li"><a href="about">About</a></li>
           <li class="li"><a href="#">Contact</a></li>
@@ -127,7 +127,7 @@
           placeholder="price product"
         />
   
-        <label for="image">price</label>
+        <label for="image">image</label>
         <input
           type="text"
           th:field="*{image}"

@@ -19,11 +19,13 @@ public class Cart {
     @Column(name = "name", nullable = false)
     private String cartName;
     @Column(name = "size", nullable = false)
-    private Integer cartSize;
+    private Double cartSize;
     @Column(name = "brand", nullable = false)
     private String cartBrand;
     @Column(name = "price", nullable = false)
     private Integer cartPrice;
+    @Column(name = "title")
+    private String cartTitle;
     @Column(name = "image")
     private String cartImage;
 

@@ -33,8 +33,32 @@
 
 
 .menu {
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.img_header_menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding-left: 680px;
+}
+
+
+.img_cart{
+width: 40px;
+height: 40px;
+}
+
+
+.header_menu{
+  display: flex;
+  margin-top: 20px;
+}
+
 
 .top_img {
   width: 100%;
@@ -92,4 +116,5 @@
 
   .footer{
     padding-top: 60px;
+    padding-bottom: 10px;
 }

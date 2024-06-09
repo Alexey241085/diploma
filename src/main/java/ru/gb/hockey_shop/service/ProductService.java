@@ -46,9 +46,10 @@ public class ProductService {
             Product product = optionalProduct.get();
             product.setName(updateProduct.getName());
             product.setSize(updateProduct.getSize());
-            product.setBrand(product.getBrand());
-            product.setImage(product.getImage());
-            product.setPrice(product.getPrice());
+            product.setBrand(updateProduct.getBrand());
+            product.setImage(updateProduct.getImage());
+            product.setPrice(updateProduct.getPrice());
+            product.setTitle(updateProduct.getTitle());
             return productRepository.save(product);
         } else {
             throw new IllegalArgumentException("Product not found with id: " + id);

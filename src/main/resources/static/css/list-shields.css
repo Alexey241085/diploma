@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .body {
+    width: 1400px;
+    margin: auto;
+    /* background-color: rgb(176, 176, 176); */
+    /* background-color: rgb(176, 176, 176); */
+    /* border: 2px solid black; */
+  }
+  
+  .header_top{
+      background-color: black;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      /* justify-content: space-between; */
+      align-items: center;
+  }
+  
+  .h1_header{
+      color: aliceblue;
+      font-size: 1.3em;
+      padding-left: 30px;
+  }
+  
+  .text_number{
+      padding-left: 600px;
+      font-size: 1.3em;
+  }
+  
+  
+  .menu {
+    display: inline-block;
+  }
+
+  .img_header_menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding-left: 680px;
+  }
+  
+  
+  .img_cart{
+  width: 40px;
+  height: 40px;
+  }
+  
+  
+  .header_menu{
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .h1_header {
+    color: aliceblue;
+    font-size: 1.3em;
+    padding-left: 30px;
+  }
+  
+  .li {
+    display: inline;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .product {
+    display: flex;
+    margin: 30px;
+    gap: 30px;
+  }
+  
+  .brand_name_text{
+    width: 10%;
+  }
+  
+  .product_border {
+    border: 1px solid chocolate;
+    border-radius: 15px;
+  }
+  
+  .product_menu {
+    display: flex;
+    gap: 30px;
+    padding-top: 50px;
+    margin-left: 50px;
+  }
+  
+  .product_menu_price {
+    display: flex;
+    gap: 30px;
+    margin-left: 30px;
+  }
+  
+  .product_img {
+    padding-left: 15px;
+  }
+  
+  .skate {
+    font-size: 2.5em;
+    padding-left: 15px;
+  }
+  
+  .product_text {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-left: 15px;
+    height: 80px;
+    margin: 30px;
+    margin-right: 500px;
+  }
+  
+  .button {
+    background-color: rgb(237, 94, 94);
+    margin-top: 20px;
+    width: 140px;
+    height: 30px;
+    margin-left: 25px;
+    border-radius: 10px;
+  }
+  
+  .img_product {
+    width: 278px;
+    height: 345px;
+  }
+  

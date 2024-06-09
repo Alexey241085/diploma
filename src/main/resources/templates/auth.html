@@ -6,6 +6,48 @@
     <link rel="stylesheet" th:href="@{/css/auth.css}" />
   </head>
   <body>
+
+    <div class="header">
+      <div class="header_top">
+        <h1 class="h1_header">магазин хоккейной экипировки МЕТЕОР в России</h1>
+        <p class="h1_header text_number">+7(495) 111-55-77</p>
+      </div>
+    </div>
+
+    <!-- <h1>ХОККЕЙНЫЙ МАГАЗИН</h1> -->
+
+    <div class="header_menu">
+
+      <div>
+        <nav class="menu">
+          <ul>
+            <li class="li"><a href="/">Главная</a></li>
+            <li class="li"><a href="/catalog">Каталог</a></li>
+            <li class="li"><a href="#">Rapair</a></li>
+            <li class="li"><a href="about">About</a></li>
+            <li class="li"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+  
+
+      <div class="img_header_menu">
+        <a href="/auth">
+          <div>
+            <img class="img_cart" th:src="@{image/7158883.png}" alt="cart">
+          </div>
+        </a>
+
+      <a href="/cart">
+        <div>
+          <img class="img_cart" th:src="@{image/5834948.png}" alt="cart">
+        </div>
+      </a>
+      </div>
+    
+    </div>
+
+
     <div class="form">
       <div>
         <h2>Login</h2>

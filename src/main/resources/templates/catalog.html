@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" th:href="@{/css/catalog.css}" />
-    <title>Сatalog</title>
+    <title>Каталог</title>
   </head>
   <body class="body">
     <div class="header">
@@ -17,52 +17,82 @@
     <!-- 
     <h1>КАТАЛОГ</h1> -->
 
-    <nav class="menu">
-      <ul>
-        <li class="li"><a href="/">Home</a></li>
-        <li class="li"><a href="catalog">Catalog</a></li>
-        <li class="li"><a href="#">Rapair</a></li>
-        <li class="li"><a href="about">About</a></li>
-        <li class="li"><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header_menu">
+      <div>
+        <nav class="menu">
+          <ul>
+            <li class="li"><a href="/">Главная</a></li>
+            <li class="li"><a href="/catalog">Каталог</a></li>
+            <li class="li"><a href="#">Rapair</a></li>
+            <li class="li"><a href="about">About</a></li>
+            <li class="li"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
 
-    
+      <div class="img_header_menu">
+        <a href="/auth">
+          <div>
+            <img class="img_cart" th:src="@{image/7158883.png}" alt="cart" />
+          </div>
+        </a>
+
+        <a href="/cart">
+          <div>
+            <img class="img_cart" th:src="@{image/5834948.png}" alt="cart" />
+          </div>
+        </a>
+      </div>
+    </div>
+
     <div class="container-item">
       <a href="catalog/list-skates">
         <div class="item item_hover">
           <img th:src="@{image/m5-pro-skate_1.png}" alt="skate" ; />
         </div>
       </a>
-      
 
-      <div class="item item_hover">
-        <img th:src="@{image/1058589.png}" alt="img" ; />
-      </div>
+      <a href="catalog/list-shorts">
+        <div class="item item_hover">
+          <img th:src="@{image/1058589.png}" alt="img" ; />
+        </div>
+      </a>
 
-      <div class="item item_hover">
-        <img th:src="@{image/threequarter.png}" alt="img" ; />
-      </div>
+      <a href="catalog/list-shields">
+        <div class="item item_hover">
+          <img th:src="@{image/threequarter.png}" alt="img" ; />
+        </div>
+      </a>
 
-      <div class="item item_hover">
-        <img th:src="@{image/stick.png}" alt="img" ; />
-      </div>
+      <a href="catalog/list-stick">
+        <div class="item item_hover">
+          <img th:src="@{image/stick.png}" alt="img" ; />
+        </div>
+      </a>
 
-      <div class="item item_hover">
-        <img th:src="@{image/combo.png}" alt="img" ; />
-      </div>
+      <a href="catalog/list-helmet">
+        <div class="item item_hover">
+          <img th:src="@{image/combo.png}" alt="img" ; />
+        </div>
+      </a>
 
-      <div class="item item_hover">
-        <img th:src="@{image/hyperlite.png}" alt="img" ; />
-      </div>
+      <a href="catalog/list-leggings">
+        <div class="item item_hover">
+          <img th:src="@{image/hyperlite.png}" alt="img" ; />
+        </div>
+      </a>
 
-      <div class="item item_hover">
-        <img th:src="@{image/supreme_mach.png}" alt="img" ; />
-      </div>
+      <a href="catalog/list-bib">
+        <div class="item item_hover">
+          <img th:src="@{image/supreme_mach.png}" alt="img" ; />
+        </div>
+      </a>
 
-      <div class="item item_hover">
-        <img th:src="@{image/sr_catalog.png}" alt="img" ; />
-      </div>
+      <a href="catalog/list-elbows">
+        <div class="item item_hover">
+          <img th:src="@{image/sr_catalog.png}" alt="img" ; />
+        </div>
+      </a>
     </div>
 
     <!-- <div th:each="product: ${products}">
@@ -107,7 +137,5 @@
         <p class="h1_header text_number">+7(495) 111-55-77</p>
       </div>
     </div>
-
-    
   </body>
 </html>

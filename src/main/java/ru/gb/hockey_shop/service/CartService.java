@@ -32,6 +32,7 @@ public class CartService {
         cartProduct.setCartBrand(product.getBrand());
         cartProduct.setCartPrice(product.getPrice());
         cartProduct.setCartSize(product.getSize());
+        cartProduct.setCartTitle(product.getTitle());
         cartRepository.save(cartProduct);
     }
 

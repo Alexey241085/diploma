@@ -18,11 +18,13 @@ public class Product {
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "size", nullable = false)
-    private Integer size;
+    private Double size;
     @Column(name = "brand", nullable = false)
     private String brand;
     @Column(name = "price", nullable = false)
     private Integer price;
+    @Column(name = "title")
+    private String title;
     @Column(name = "image")
     private String image;
 
