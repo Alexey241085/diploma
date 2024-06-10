@@ -28,5 +28,7 @@ public class Cart {
     private String cartTitle;
     @Column(name = "image")
     private String cartImage;
+    @Column(name ="idUser")
+    private String personName;
 
 }

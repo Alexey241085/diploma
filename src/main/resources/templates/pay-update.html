@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+     <div>
+      <h4 class="balance_text">баланс</h4>
+
+      <div th:switch="${balance}">
+        <h2 th:case="null">0</h2>
+        <div th:case="*"></div>
+      </div>
+
+      <div th:each="num:${balance}">
+        <div>
+          <p class="balance_nam" th:text="${num.account}"></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="info_button_price" th:if="${summPriceProduct} > 0">
+        <div class="summ_product-in-cart">
+          <div>
+            <p>cумма к оплате:</p>
+          </div>
+          <div>
+            <p th:text="${summPriceProduct}"></p>
+          </div>
+        </div>
+        <div>
+
+            <form th:action="@{/pay-update}"  method="post">
+
+
+                <input type="submit" value="Добавить товар" />
+            <!-- <a th:href="@{pay-update}">
+                <button class="button_pay">оплатить</button>
+            </a> -->
+
+        </form>
+          
+        </div>
+      </div>
+
+
+
+
+  </body>
+</html>
+

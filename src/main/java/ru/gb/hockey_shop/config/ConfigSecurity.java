@@ -53,7 +53,7 @@ public class ConfigSecurity {
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/images/**","/", "/catalog","/auth","/list-skates","/admin-creat","/update-product").permitAll()
+                        .requestMatchers("/css/**", "/images/**").permitAll()
                         .requestMatchers("/**").permitAll()
                         .requestMatchers("/admin").authenticated())
                 .formLogin(form->form

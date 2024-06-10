@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -37,14 +39,14 @@ public class ProductController {
         return "index";
     }
 
-
+//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/catalog")
     public String showCatalog() {
         return "catalog";
     }
 
 
-    // показывает список - коньки
+//     показывает список - коньки
     @GetMapping("/catalog/list-skates")
     public String showProductSkates(Model model) {
         String s = "коньки";

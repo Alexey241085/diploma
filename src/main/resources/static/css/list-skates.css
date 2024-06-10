@@ -6,11 +6,8 @@
 .body {
   width: 1400px;
   margin: auto;
-
-  /* background-color: rgb(176, 176, 176); */
-  /* background-color: rgb(176, 176, 176); */
-  /* border: 2px solid black; */
-  height: 100%;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 187;
 }
 
 .header_top {
@@ -42,7 +39,7 @@
   justify-content: center;
   align-items: center;
   gap: 25px;
-  padding-left: 680px;
+  padding-left: 530px;
 }
 
 .img_cart {
@@ -51,8 +48,10 @@
 }
 
 .header_menu {
+  padding-left: 40px;
   display: flex;
   margin-top: 20px;
+  background-color: rgb(198, 200, 198);
 }
 
 .li {
@@ -62,14 +61,36 @@
   margin-right: 10px;
 }
 
-.product {
-  display: flex;
-  margin: 30px;
-  gap: 30px;
+.li_text {
+  text-decoration: none;
 }
 
-.brand_name_text{
-  width: 11%;
+.product {
+  display: flex;
+  margin-top: 50px;
+  margin-right: 40px;
+  margin-left: 40px;
+  gap: 10px;
+}
+
+.product_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  height: 80px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  margin-left: 40px;
+
+  margin-right: 450px;
+}
+
+.brand_name_text {
+  width: 15%;
 }
 
 .product_border {
@@ -87,7 +108,7 @@
 .product_menu_price {
   display: flex;
   gap: 30px;
-  margin-left: 30px;
+  margin-left: 50px;
 }
 
 .product_img {
@@ -99,22 +120,12 @@
   padding-left: 15px;
 }
 
-.product_text {
- display: flex;
- justify-content: center;
- align-items: center;
- padding-left: 15px;
-  height: 80px;
-  margin: 30px;
-  margin-right: 500px;
-}
-
 .button {
   background-color: rgb(237, 94, 94);
-  margin-top: 20px;
+  margin-top: 10px;
   width: 140px;
   height: 30px;
-  margin-left: 25px;
+  margin-left: 50px;
   border-radius: 10px;
 }
 
@@ -122,5 +133,3 @@
   width: 278px;
   height: 345px;
 }
-
-

@@ -22,6 +22,10 @@ public class PersonService {
         return personRepository.findAll();
     }
 
+    public Optional<Person> getPersonById(Long id){
+        return personRepository.findById(id);
+    }
+
     // создать пользователя ( администратор)
     public void createPerson(Person person){
 //        person.setName(person.getName());

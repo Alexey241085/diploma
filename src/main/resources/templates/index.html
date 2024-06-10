@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Хоккейный магазин</title>
@@ -14,43 +20,33 @@
       </div>
     </div>
 
-    <!-- <h1>ХОККЕЙНЫЙ МАГАЗИН</h1> -->
-
     <div class="header_menu">
-
       <div>
         <nav class="menu">
           <ul>
-            <li class="li"><a href="/">Главная</a></li>
-            <li class="li"><a href="/catalog">Каталог</a></li>
-            <li class="li"><a href="#">Rapair</a></li>
-            <li class="li"><a href="about">About</a></li>
-            <li class="li"><a href="#">Contact</a></li>
+            <li class="li"><a class="li_text" href="/">Главная</a></li>
+            <li class="li"><a class="li_text" href="/catalog">Каталог</a></li>
+            <li class="li"><a class="li_text" href="#">Rapair</a></li>
+            <li class="li"><a class="li_text" href="about">About</a></li>
+            <li class="li"><a class="li_text" href="#">Contact</a></li>
           </ul>
         </nav>
       </div>
-  
 
       <div class="img_header_menu">
         <a href="/auth">
           <div>
-            <img class="img_cart" th:src="@{image/7158883.png}" alt="cart">
+            <img class="img_cart" th:src="@{image/7158883.png}" alt="cart" />
           </div>
         </a>
 
-      <a href="/cart">
-        <div>
-          <img class="img_cart" th:src="@{image/5834948.png}" alt="cart">
-        </div>
-      </a>
+        <a href="/cart">
+          <div>
+            <img class="img_cart" th:src="@{image/5834948.png}" alt="cart" />
+          </div>
+        </a>
       </div>
-    
     </div>
-
-   
-
-
-
 
     <!-- <div class="top_img">
        

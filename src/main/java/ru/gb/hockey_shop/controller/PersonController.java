@@ -29,6 +29,10 @@ public class PersonController {
 
 //    @PostMapping("/")
 //    public vo
+//    @GetMapping
+//    public List<Person> showAllPersons(){
+//        return  personService.getPerson();
+//    }
 
 
 

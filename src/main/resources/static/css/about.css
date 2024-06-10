@@ -1,3 +1,10 @@
+.body {
+  width: 1400px;
+  margin: auto;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 187;
+}
+
 .menu {
     display: inline-block;
   }
@@ -7,4 +14,15 @@
     font-size: 30px;
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  .li_text{
+    text-decoration: none;
+  }
+
+  .header_menu{
+    padding-left: 40px;
+    display: flex;
+    margin-top: 20px;
+    background-color: rgb(198, 200, 198);
   }

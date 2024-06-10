@@ -7,6 +7,7 @@ import ru.gb.hockey_shop.model.product.Product;
 import ru.gb.hockey_shop.repository.CartRepository;
 import ru.gb.hockey_shop.repository.ProductRepository;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,9 +37,34 @@ public class CartService {
         cartRepository.save(cartProduct);
     }
 
+//    public void qqqcreateCartProduct(Cart product, Principal principal){
+//        Cart cartProduct = new Cart();
+//        cartProduct.setCartName(cartProduct.getCartName());
+//        cartProduct.setCartImage(cartProduct.getCartImage());
+//        cartProduct.setCartBrand(cartProduct.getCartBrand());
+//        cartProduct.setCartPrice(cartProduct.getCartPrice());
+//        cartProduct.setCartSize(cartProduct.getCartSize());
+//        cartProduct.setCartTitle(cartProduct.getCartTitle());
+//
+//        cartProduct.setPersonName(principal.getName());
+//        cartRepository.save(cartProduct);
+//    }
+
+
+
+
+
+
+
+
     // Удалить продукт из карзины
     public void deleteCartProduct(Long id){
         cartRepository.deleteById(id);
+    }
+
+    public void deleteAllCartProduct(){
+        cartRepository.deleteAll();
+
     }
 
 

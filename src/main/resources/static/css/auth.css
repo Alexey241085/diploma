@@ -6,9 +6,9 @@
 .body {
   width: 1400px;
   margin: auto;
-  /* background-color: rgb(176, 176, 176); */
-  /* background-color: rgb(176, 176, 176); */
-  /* border: 2px solid black; */
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 187;
+  background-color: beige;
 }
 
 .header_top {
@@ -38,12 +38,43 @@
   align-items: center;
 }
 
+.header_login {
+ margin-bottom: 15px;
+ margin-left: 5px;
+}
+
+.input_log{
+  margin-left: 10px;
+  width: 150px;
+  height: 20px;
+}
+
+.input_pass{
+  margin-left: 15px;
+  width: 150px;
+  height: 20px;
+}
+
+.form_div {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  margin-top: 50px;
+  border: 2px dotted red;
+  width: 504px;
+  height: 300px;
+}
+
 .img_header_menu {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25px;
-  padding-left: 680px;
+  padding-left: 530px;
 }
 
 .img_cart {
@@ -52,8 +83,10 @@
 }
 
 .header_menu {
+  padding-left: 40px;
   display: flex;
   margin-top: 20px;
+  background-color: rgb(198, 200, 198);
 }
 
 .li {
@@ -63,8 +96,26 @@
   margin-right: 10px;
 }
 
+.li_text {
+  text-decoration: none;
+}
+
 .form {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button_send{
+  margin-top: 10px;
+  margin-left: 95px;
+  width: 70px;
+  height: 20px;
+
+}
+
+
+.button_exit{
+  width: 70px;
+  height: 20px;
 }

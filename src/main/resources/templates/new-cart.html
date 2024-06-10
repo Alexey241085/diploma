@@ -1,48 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Корзина</title>
     <link rel="stylesheet" th:href="@{/css/cart.css}" />
   </head>
-  <body class="body">
+  <body>
     <div class="header">
       <div class="header_top">
-        <div>
-          <h1 class="h1_header">
-            магазин хоккейной экипировки МЕТЕОР в России
-          </h1>
-        </div>
-
-        <div>
-          <h4 class="balance_text">баланс</h4>
-
-          <div th:switch="${balance}">
-            <h2 th:case="null">0</h2>
-            <div th:case="*"></div>
-          </div>
-
-          <div th:each="num:${balance}">
-            <div>
-              <p class="balance_nam" th:text="${num.account}"></p>
-            </div>
-
-            <a th:href="@{account/{id}(id=${num.id})}">
-              <button>пополнить</button>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <p class="h1_header text_number">+7(495) 111-55-77</p>
-        </div>
+        <h1 class="h1_header">магазин хоккейной экипировки МЕТЕОР в России</h1>
+        <p class="h1_header text_number">+7(495) 111-55-77</p>
       </div>
     </div>
 
@@ -50,11 +18,11 @@
       <div>
         <nav class="menu">
           <ul>
-            <li class="li"><a class="li_text" href="/">Главная</a></li>
-            <li class="li"><a class="li_text" href="/catalog">Каталог</a></li>
-            <li class="li"><a class="li_text" href="#">Rapair</a></li>
-            <li class="li"><a class="li_text" href="about">About</a></li>
-            <li class="li"><a class="li_text" href="#">Contact</a></li>
+            <li class="li"><a href="/">Главная</a></li>
+            <li class="li"><a href="/catalog">Каталог</a></li>
+            <li class="li"><a href="#">Rapair</a></li>
+            <li class="li"><a href="about">About</a></li>
+            <li class="li"><a href="#">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -103,6 +71,10 @@
                 </div>
               </div>
 
+              <!-- <div class="product_text product_border">
+              <p th:text="${product.cartTitle}"></p>
+            </div> -->
+
               <div>
                 <div class="product_menu_price">
                   <div>
@@ -147,15 +119,7 @@
                   </div>
                 </div>
                 <div>
-                  
-                  <a href="/pay-update">
-                    <button class="button_pay">оплатить</button>
-                  </a>
-                    
-                
-
-                  <!-- th:href="@{cart-delete/{id}(id=${product.id})}" -->
-                 
+                  <button class="button_pay">оплатить</button>
                 </div>
               </div>
             </div>
@@ -163,5 +127,51 @@
         </div>
       </div>
     </div>
+
+    <!-- <div class="product product_border" th:each="product:${cartProducts}">
+      <div class="product_img">
+        <img
+          class="img_product"
+          th:src="@{'/image/'+${product.cartImage}}"
+          alt="img"
+        />
+      </div>
+
+      <div>
+        <div class="product product_border">
+          <div class="brand_name_text">
+           
+            <p class="skate" th:text="${product.cartName}">Коньки</p>
+          </div>
+          <div>
+           
+            <p class="skate" th:text="${product.cartBrand}"></p>
+          </div>
+        </div>
+
+        <div class="product_text product_border">
+          <p th:text="${product.cartTitle}"></p>
+        </div>
+
+        <div>
+          <div class="product_menu_price">
+            <div>
+              <p>размер</p>
+              <p th:text="${product.cartSize}"></p>
+            </div>
+            <div>
+              <p>цена</p>
+              <p th:text="${product.cartPrice}"></p>
+            </div>
+          </div>
+        </div>
+        <a
+          th:href="@{cart-delete/{id}(id=${product.id})}"
+          title="Изменить пользователя"
+        >
+          <button class="button">удалить</button></a
+        >
+      </div>
+    </div> -->
   </body>
 </html>

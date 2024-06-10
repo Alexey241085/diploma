@@ -5,13 +5,17 @@
   xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
 >
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <title>Админ</title>
     <link rel="stylesheet" th:href="@{/css/admin.css}" />
   </head>
-  <body>
-
-
+  <body class="body">
     <div class="header">
       <div class="header_top">
         <h1 class="h1_header">магазин хоккейной экипировки МЕТЕОР в России</h1>
@@ -19,26 +23,45 @@
       </div>
     </div>
 
-    <!-- <h1>ХОККЕЙНЫЙ МАГАЗИН</h1> -->
+    <div class="header_menu">
+      <div>
+        <nav class="menu">
+          <ul>
+            <li class="li"><a class="li_text" href="/">Главная</a></li>
+            <li class="li"><a class="li_text" href="/catalog">Каталог</a></li>
+            <li class="li"><a class="li_text" href="#">Rapair</a></li>
+            <li class="li"><a class="li_text" href="about">About</a></li>
+            <li class="li"><a class="li_text" href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
 
-    <div></div>
+      <div class="img_header_menu">
+        <a href="/auth">
+          <div>
+            <img class="img_cart" th:src="@{image/7158883.png}" alt="cart" />
+          </div>
+        </a>
 
-    <div>
-      <nav class="menu">
-        <ul>
-          <li class="li"><a href="/">Главная</a></li>
-          <li class="li"><a href="catalog">Каталог</a></li>
-          <li class="li"><a href="#">Rapair</a></li>
-          <li class="li"><a href="about">About</a></li>
-          <li class="li"><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+        <a href="/cart">
+          <div>
+            <img class="img_cart" th:src="@{image/5834948.png}" alt="cart" />
+          </div>
+        </a>
+      </div>
     </div>
-    <!-- <div class="heder_h2">
-      <h2 class="users">АДМИНИСТРАТОР</h2>
-    </div> -->
 
-    <div th:switch="${persons}">
+    <div class="button_exit_div">
+      <a href="#" th:href="@{/logout}">
+        <button class="button_exit">выйти из админки</button>
+      </a>
+    </div>
+
+    <div class="header_text-div">
+      <h1 class="header_text">Управление данными пользователей</h1>
+    </div>
+
+    <div class="user_table" th:switch="${persons}">
       <h2 th:case="null">No users found!</h2>
       <div th:case="*">
         <table class="table">
@@ -62,84 +85,66 @@
       </div>
 
       <div class="btn_div">
-        <a class="btn-primary" th:href="@{/admin}"
-          ><img class="img_link" th:src="@{image/i-4.webp}" alt=""
-        /></a>
+        <img class="img_link" th:src="@{image/i-4.webp}" alt="" />
       </div>
     </div>
 
-    <div class="logout">
-      <div class="div-logout">
-        <a href="#" th:href="@{/logout}">Log Out</a>
-      </div>
+    <div class="header_text-div">
+      <h2 class="header_text">Управление данными товаров</h2>
     </div>
-
-    <!--    <h2>Login</h2>-->
-    <!--    <form  th:action="@{/}" method="post">-->
-    <!--      <div>-->
-    <!--        <label for="username">Username:</label>-->
-    <!--        <input type="text" id="username" name="username"/>-->
-    <!--      </div>-->
-    <!--      <div>-->
-    <!--        <label for="password">Password:</label>-->
-    <!--        <input type="password" id="password" name="password"/>-->
-    <!--      </div>-->
-
-    <!--&lt;!&ndash;      <button class="button" type="submit">отправить</button>&ndash;&gt;-->
-
-    <!--          <input type="submit" value="Login"/>-->
-    <!--      <a href="#" th:href="@{/logout}">Log Out</a>-->
-    <!--    </form>-->
-
 
     <div class="form_creat_prroduct">
-
       <form th:action="@{/admin}" th:object="${product}" method="post">
         <label for="name">name</label>
         <input
+          class="text"
           type="text"
           th:field="*{name}"
           id="name"
           placeholder="name product"
         />
-  
+
         <label for="size">size</label>
         <input
+          class="text"
           type="number"
           th:field="*{size}"
           id="size"
           placeholder="size product"
         />
-  
+
         <label for="brand">brand</label>
         <input
+          class="text"
           type="text"
           th:field="*{brand}"
           id="brand"
           placeholder="brand product"
         />
-  
+
         <label for="price">price</label>
         <input
+          class="text"
           type="number"
           th:field="*{price}"
           id="price"
           placeholder="price product"
         />
-  
+
         <label for="image">image</label>
         <input
+          class="text"
           type="text"
           th:field="*{image}"
           id="image"
           placeholder="image product"
         />
-  
-        <input type="submit" value="Create Creat" />
+
+        <input type="submit" value="Добавить товар" />
       </form>
     </div>
 
-    <div th:switch="${all_products}">
+    <div class="table_product" th:switch="${all_products}">
       <h2 th:case="null">No users found!</h2>
       <div th:case="*">
         <table class="table">
@@ -162,18 +167,27 @@
               <td class="td" th:text="${prod.price}"></td>
               <td class="td" th:text="${prod.image}"></td>
               <td>
-                <a th:href="@{update-product/{id}(id=${prod.id})}"
-                title="Изменить пользователя">E</a>;
-             <a th:href="@{admin-delete/{id}(id=${prod.id})}"
-                title="Удалить пользователя">X</a></td>
-            </tr>
+                <div class="href_button">
+                  <div>
+                    <a
+                      th:href="@{update-product/{id}(id=${prod.id})}"
+                      title="Изменить пользователя"
+                      ><button class="button_change">изменить</button></a
+                    >
+                  </div>
+                  <div>
+                    <a
+                      th:href="@{admin-delete/{id}(id=${prod.id})}"
+                      title="Удалить пользователя"
+                      ><button class="button_del">удалить</button></a
+                    >
+                  </div>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-
-    
+    </div>
   </body>
 </html>
-
-<!-- https://hrcode.su/javascript/kak-sozdat-dinamicheskuyu-tabliczu-v-html-s-pomoshhyu-javascript/?ysclid=lvsdmgzzk222687738 -->
