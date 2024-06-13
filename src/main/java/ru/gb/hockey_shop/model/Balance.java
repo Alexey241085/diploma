@@ -23,10 +23,4 @@ public class Balance {
     private Double account;
 
 
-    private void addBalance() {
-
-        account = account + 50000;
-
-    }
-
 }

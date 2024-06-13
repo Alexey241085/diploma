@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.gb.hockey_shop.model.Balance;
 
+
+// репозиторий для класса Balance
 @Repository
 public interface BalanceRepozitory extends JpaRepository<Balance,Long> {
 }

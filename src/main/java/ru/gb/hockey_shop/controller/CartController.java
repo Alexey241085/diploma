@@ -36,19 +36,21 @@ public class CartController {
     private BalanceService balanceService;
 
 
-//    @GetMapping("/cart")
-//    public String showCartProducts(){
-//        cartService.getCartProducts();
-//        return "cart";
-//    }
-
-
+    /**
+     * показывает страницу Корзины
+     *
+     * @param model собирает:
+     *              - список продуктов из БД - "cartProducts";
+     *              - количество товаров в корзине "countPruductCart";
+     *              - сумма покупки "summPriceProduct";
+     *              - список счетов "balance"
+     * @return страница корзина
+     */
     @GetMapping("/cart")
     public String showProductSkates(Model model) {
         List<Cart> listCartProduct = cartService.getCartProducts();
         Long count = countProductsCart(listCartProduct);
         Integer summPriceProduct = summPriceProductsCart(listCartProduct);
-
         List<Balance> listBalance = balanceService.showAccount();
 
         model.addAttribute("balance", listBalance);
@@ -59,75 +61,61 @@ public class CartController {
         return "cart";
     }
 
-
+    /**
+     * страница оплаты покупок
+     *
+     * @param model собирает:
+     *              - сумму покупок "summPriceProduct";
+     *              - баланс
+     */
     @GetMapping("/pay-update")
     public String showOk(Model model) {
         List<Cart> listCartProduct = cartService.getCartProducts();
-
         Integer summPriceProduct = summPriceProductsCart(listCartProduct);
-
         List<Balance> listBalance = balanceService.showAccount();
 
         model.addAttribute("balance", listBalance);
         model.addAttribute("cartProducts", listCartProduct);
-
         model.addAttribute("summPriceProduct", summPriceProduct);
         return "pay-update";
     }
 
-
+    /**
+     * summPriceProduct - итоговая цена
+     * balanceAccount - берем сумму на счете (get.account)
+     * result - из уммы на счете вычитаем сумму покупок
+     * если успешно списывается со счета сумма покупки, если недостаточно средст списание не происходит
+     *
+     * @return обновленную, после совершения операции, страницу корзины
+     */
     @PostMapping("/pay-update")
     public String updateaAccoutnPayCart() {
         List<Cart> listCartProduct = cartService.getCartProducts();
         Integer summPriceProduct = summPriceProductsCart(listCartProduct);
-
-        System.out.println("сумма товаров "+summPriceProduct);
-
         Long a = 1L;
 
         Double balanceAccount = balanceService.showAccount().stream()
                 .filter(b -> b.getId().equals(a)).map(Balance::getAccount).findFirst().get();
         Double result = balanceAccount - summPriceProduct;
 
-        System.out.println("баланс "+balanceAccount);
-
-        System.out.println("результат "+ result);
-
         if (result >= 0) {
             Long id;
             Optional<Balance> optBalanse = balanceService.showAccount()
                     .stream().filter(s -> s.getId().equals(a)).findFirst();
-                Balance balance2 = optBalanse.get();
-                balance2.setAccount(result);
+            Balance balance2 = optBalanse.get();
+            balance2.setAccount(result);
             System.out.println(balance2);
-                balanceService.updateaAccoutnPay(a, balance2);
-                cartService.deleteAllCartProduct();
+            balanceService.updateaAccoutnPay(a, balance2);
+            cartService.deleteAllCartProduct();
 
-            }
-        else System.out.println("недостаточно средств");
+        } else System.out.println("недостаточно средств");
 
 //        }
-
         return "redirect:/cart";
     }
 
 
-//    @PostMapping("/cart-pay")
-//    public String payCart() {
-//        List<Cart> listCartProduct = cartService.getCartProducts();
-//        Double balance = balanceService.showAccount().stream()
-//                .filter(b -> b.getId().equals(1))
-//                .findFirst().map(s -> s.getAccount().doubleValue()).get();
-//
-//        Integer summPriceProduct = summPriceProductsCart(listCartProduct);
-//
-//
-//        return "cart";
-//    }
-
-//
-
-
+    // удаление товара из корзины
     @GetMapping("/cart-delete/{id}")
     public String deleteCartById(@PathVariable Long id) {
         cartService.deleteCartProduct(id);
@@ -143,13 +131,14 @@ public class CartController {
     }
 
 
+    // метод считает количество товаров в корзине
     private Long countProductsCart(List<Cart> listCartProduct) {
         Long count = cartService.getCartProducts().stream().count();
         return count;
     }
 
 
-    //    private Integer summPriceProductsCart(List<Cart> listCartProduct) {
+    // итоговая сумма в корзине
     private Integer summPriceProductsCart(List<Cart> listCartProduct) {
         Integer summPrice = cartService.getCartProducts()
                 .stream()
@@ -157,38 +146,10 @@ public class CartController {
                 .reduce(0, Integer::sum);
         return summPrice;
     }
-
-
-//    private void payCartResult() {
-//        try {
-//            List<Cart> listCartProduct = cartService.getCartProducts();
-//            Integer summPriceProduct = summPriceProductsCart(listCartProduct);
 //
-//            Double balance = balanceService.showAccount().stream()
-//                    .filter(b -> b.getId().equals(1))
-//                    .findFirst().map(s -> s.getAccount().doubleValue()).get();
-//
-//            Double result = balance - summPriceProduct;
-//
-//            if (result >= 0) {
-//                cartService.deleteAllCartProduct();
-//            }
-//        } catch (Exception e) {
-//
-//        else{
-//                System.out.println("Надостаточно средст");
-//            }
-//
-//
-//        }
-//
-//
+//    @GetMapping("/pay-uodate")
+//    private String payComplite() {
+//        return "pay-uodate";
 //    }
-
-    @GetMapping("/pay-uodate")
-    private String payComplite() {
-
-        return "pay-uodate";
-    }
 
 }

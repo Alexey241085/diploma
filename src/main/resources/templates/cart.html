@@ -21,7 +21,7 @@
           </h1>
         </div>
 
-        <div>
+        <div class="balance_blok">
           <h4 class="balance_text">баланс</h4>
 
           <div th:switch="${balance}">
@@ -29,14 +29,16 @@
             <div th:case="*"></div>
           </div>
 
-          <div th:each="num:${balance}">
+          <div class="balance_blok" th:each="num:${balance}">
             <div>
               <p class="balance_nam" th:text="${num.account}"></p>
             </div>
 
-            <a th:href="@{account/{id}(id=${num.id})}">
-              <button>пополнить</button>
-            </a>
+            <div>
+              <a th:href="@{account/{id}(id=${num.id})}">
+                <button class="balance_button">пополнить</button>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -52,9 +54,7 @@
           <ul>
             <li class="li"><a class="li_text" href="/">Главная</a></li>
             <li class="li"><a class="li_text" href="/catalog">Каталог</a></li>
-            <li class="li"><a class="li_text" href="#">Rapair</a></li>
-            <li class="li"><a class="li_text" href="about">About</a></li>
-            <li class="li"><a class="li_text" href="#">Contact</a></li>
+           
           </ul>
         </nav>
       </div>
@@ -147,15 +147,11 @@
                   </div>
                 </div>
                 <div>
-                  
                   <a href="/pay-update">
-                    <button class="button_pay">оплатить</button>
+                    <button class="button_pay">перейти к оплате</button>
                   </a>
-                    
-                
 
                   <!-- th:href="@{cart-delete/{id}(id=${product.id})}" -->
-                 
                 </div>
               </div>
             </div>

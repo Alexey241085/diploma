@@ -20,6 +20,10 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
+    /**
+     * пока не используется
+     * цель: сделать регистрацию пользователей
+     */
 //    @GetMapping("/admin")
 //    public String startPerson(Model model){
 //        List<Person> personList = personService.getPerson();
@@ -33,9 +37,6 @@ public class PersonController {
 //    public List<Person> showAllPersons(){
 //        return  personService.getPerson();
 //    }
-
-
-
 
 
 }

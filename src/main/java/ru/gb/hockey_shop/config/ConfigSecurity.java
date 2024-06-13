@@ -66,8 +66,6 @@ public class ConfigSecurity {
 
                 .build();
 
-
-//        .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
     }
 
     @Bean

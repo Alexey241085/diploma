@@ -26,10 +26,6 @@ public class ProductService {
 
     // создать продукт ( администратор)
     public void createProduct(Product product){
-//        product.setName(product.getName());
-//        product.setBrand(product.getBrand());
-//        product.setImage(product.getImage());
-//        product.setSize(product.getSize());
         productRepository.save(product);
     }
 

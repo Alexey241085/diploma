@@ -24,53 +24,35 @@ public class BalanceController {
     @Autowired
     private BalanceService balanceService;
 
-
+    /**
+     * страница пополнения счета
+     *
+     * @param id    счета в базе данных
+     * @param model захватывает список счетов из БД (по умолчанию у нас один счет)
+     * @return страница пополнения счета
+     */
     @GetMapping("/account/{id}")
-    public String addAccount(@PathVariable Long id, Model model){
+    public String addAccount(@PathVariable Long id, Model model) {
         Balance balance = balanceService.getAccountById(id).get();
         model.addAttribute("pay", balance);
-        System.out.println(balance);
         return "/account";
     }
 
+    /**
+     * @return после нажатия кнопки возвращает на страницу /cart
+     * если пустое значение выводится log, если нет пополнение баланса
+     */
     @PostMapping("/account/{id}")
-    public String addCartProduct2(@PathVariable Long id, Balance balance){
+    public String addCartProduct2(@PathVariable Long id, Balance balance) {
         try {
-            balanceService.updateaAccoutn(id,balance);
+            balanceService.updateaAccoutn(id, balance);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             log.info("log - Нельзя отправить пустое значение");
             System.out.println("Нельзя отправить пустое значение");
         }
         return "redirect:/cart";
     }
-
-//    @PostMapping("/account/{id}")
-//    public String addCartProduct(@PathVariable("id") Long id, Balance balance){
-//        balanceService.updateaAccoutn(id,balance);
-//
-//
-//        return "cart";
-//    }
-
-
-//    @GetMapping("/account-update{id}")
-//    public String addBalance(@PathVariable Long id, Model model){
-//        List<Balance> listBalance = balanceService.showAccount();
-//
-//
-//        model.addAttribute("balance", balanceService.getAccountById(id));
-//        return "account-update";
-//    }
-
-
-
-//    @GetMapping("/account-update/{id}")
-//    public String upBalanc(@PathVariable Long id, Model model) {
-//        model.addAttribute("uppPay",balanceService.getAccountById(id).get());
-//        return "account-update";
-//    }
-
 
 
 }

@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Корзина</title>
-    <link rel="stylesheet" th:href="@{/css/cart.css}" />
+    <link rel="stylesheet" th:href="@{/css/account.css}" />
   </head>
   <body class="body">
     <div class="header">
@@ -33,9 +33,7 @@
           <ul>
             <li class="li"><a class="li_text" href="/">Главная</a></li>
             <li class="li"><a class="li_text" href="/catalog">Каталог</a></li>
-            <li class="li"><a class="li_text" href="#">Rapair</a></li>
-            <li class="li"><a class="li_text" href="about">About</a></li>
-            <li class="li"><a class="li_text" href="#">Contact</a></li>
+          
           </ul>
         </nav>
       </div>
@@ -55,15 +53,15 @@
       </div>
     </div>
 
-    <div>
+    <div class="form_div">
       <div class="form_creat_prroduct">
-        <div>
+        <div >
           <form
             th:action="@{/account/{id}(id=${pay.id})}"
             th:object="${pay}"
             method="post"
           >
-            <label for="num">number</label>
+            <label for="num"></label>
             <input
               class="number"
               th:field="*{account}"
@@ -78,7 +76,7 @@
 
         <div>
           <a href="/cart">
-            <button>вернуться в корзину</button>
+            <button class="bitton_retern">вернуться в корзину</button>
           </a>
         </div>
       </div>

@@ -39,14 +39,14 @@ public class ProductController {
         return "index";
     }
 
-//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    //    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/catalog")
     public String showCatalog() {
         return "catalog";
     }
 
 
-//     показывает список - коньки
+    //     показывает список - коньки
     @GetMapping("/catalog/list-skates")
     public String showProductSkates(Model model) {
         String s = "коньки";
@@ -58,6 +58,7 @@ public class ProductController {
         return "list-skates";
     }
 
+    // кнопка добавляет коньки в корзину
     @GetMapping("/catalog/list-skate-cart/{id}")
     public String creatCartProductSkate(@PathVariable Long id) {
         Product product = productService.getProductById(id).get();
@@ -78,6 +79,7 @@ public class ProductController {
         return "list-shorts";
     }
 
+    // кнопка добавляет шорты в корзину
     @GetMapping("/catalog/list-shorts-cart/{id}")
     public String creatCartProductShorts(@PathVariable Long id) {
         Product product = productService.getProductById(id).get();
@@ -98,6 +100,7 @@ public class ProductController {
         return "list-shields";
     }
 
+    // // кнопка добавляет щитки в корзину
     @GetMapping("/catalog/list-shields-cart/{id}")
     public String creatCartProductShields(@PathVariable Long id) {
         Product product = productService.getProductById(id).get();
@@ -118,6 +121,7 @@ public class ProductController {
         return "list-stick";
     }
 
+    // кнопка добавляет клюшку в корзину
     @GetMapping("/catalog/list-stick-cart/{id}")
     public String creatCartProductStick(@PathVariable Long id) {
         Product product = productService.getProductById(id).get();
@@ -138,6 +142,7 @@ public class ProductController {
         return "list-helmet";
     }
 
+    // кнопка добавляет шлем в корзину
     @GetMapping("/catalog/list-helmet-cart/{id}")
     public String creatCartProductHelmet(@PathVariable Long id) {
         Product product = productService.getProductById(id).get();
@@ -146,7 +151,7 @@ public class ProductController {
     }
 
 
-    // показывает список - локти
+    // показывает список - краги
     @GetMapping("/catalog/list-leggings")
     public String showProductLeggings(Model model) {
         String s = "краги";
@@ -158,6 +163,7 @@ public class ProductController {
         return "list-leggings";
     }
 
+    // кнопка добавляет налокотники в корзину
     @GetMapping("/catalog/list-leggings-cart/{id}")
     public String creatCartProductLeggings(@PathVariable Long id) {
         Product product = productService.getProductById(id).get();
@@ -178,6 +184,7 @@ public class ProductController {
         return "list-bib";
     }
 
+    // кнопка добавляет нагрудник в корзину
     @GetMapping("/catalog/list-bib-cart/{id}")
     public String creatCartProducBib(@PathVariable Long id) {
         Product product = productService.getProductById(id).get();
@@ -198,6 +205,7 @@ public class ProductController {
         return "list-elbows";
     }
 
+    //кнопка добавляет налокотники в корзину
     @GetMapping("/catalog/list-elbows-cart/{id}")
     public String creatCartProductElbows(@PathVariable Long id) {
         Product product = productService.getProductById(id).get();
@@ -220,7 +228,7 @@ public class ProductController {
     }
 
 
-    // показывает страницу admin
+//     показывает страницу admin
     @GetMapping("/admin")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String admin(Model model) {
@@ -254,6 +262,7 @@ public class ProductController {
         return "update-product";
     }
 
+    // отправляет изменения в БД
     @PostMapping("/update-product/{id}")
     public String updateProduct(@PathVariable Long id, Product product) {
         productService.updateProduct(id, product);
